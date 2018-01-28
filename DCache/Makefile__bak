@@ -1,0 +1,15 @@
+
+.PHONY: help
+
+help:
+	@echo target: clean main_8k main
+
+main_8k: main_b.cpp
+	g++ main_b.cpp -o ./bin/$@ -static-libgcc -static-libstdc++ -Wall
+	
+main: main.cpp
+	g++ main.cpp -o ./bin/$@ -static-libgcc -static-libstdc++
+	
+clean:
+	rm ./bin/test_8k.exe
+	rm ./bin/main.exe
