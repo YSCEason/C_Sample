@@ -29,6 +29,7 @@ void main(int argc, char *argv)
 
     INT32  i[5]  = {0xaa, 0xbb, 0xcc, 0xdd, 0xee};
     INT32 *ip    = i;
+
     printf("&i      = %p\n", &i);
     printf("ip      = %p\n", ip);
 
@@ -130,4 +131,32 @@ void main(int argc, char *argv)
     printf("(UINT32 *)++k           = 0x%p\n", (UINT32 *)++k);
     printf("(UINT32 *)k             = 0x%p\n", (UINT32 *)k);
 
+
+
+
+    printf("---------------------\n\n");
+    UINT32 pp[5] = {0x11, 0x33, 0x55, 0x77, 0x99};
+    UINT32 b=0x10;
+    UINT32 *qq;
+    qq = pp;
+
+    printf("*qq = %p\n"    , *qq);
+    printf("*qq+++b = %p\n", *qq+++b);
+    printf("*qq = %p\n"    , *qq);
+
+
+
+    printf("---------------------\n\n");
+
+    UINT8 *ucq;
+    b = 0x34567890;
+    ucq = (UINT8 *)&b;
+    printf("*b      = 0x%p\n"     , b);
+    printf("*qq     = %p\n"    , *ucq);
+    printf("*(qq+1) = %p\n"    , *(ucq+1));
+    printf("*(qq+2) = %p\n"    , *(ucq+2));
+    printf("*(qq+3) = %p\n"    , *(ucq+3));
+
+
+    system("pause");
 }
